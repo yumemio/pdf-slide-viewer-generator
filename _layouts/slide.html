@@ -54,3 +54,10 @@ scripts:
     <button class="next" type="button" name="next" title="次のスライド">→</button>
   </div>
 </div>
+<div class="slide-texts">
+  {% assign counter = 0 %}
+  {% for slide in page.pages %}
+    {% assign counter = counter | plus: 1 %}
+    <p>{{ counter }}. {{ slide.text }}</p>
+  {% endfor %}
+</div>
