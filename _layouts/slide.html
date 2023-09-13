@@ -59,5 +59,15 @@ scripts:
   {% for slide in page.pages %}
     {% assign counter = counter | plus: 1 %}
     <p>{{ counter }}. {{ slide.text }}</p>
+    {% if slide.links.size > 0 %}
+      <p>リンク</p>
+      <ul>
+        {% for link in slide.links %}
+          <li>
+            <a href="{{ link.url }}" target="_blank" rel="noopener">● {{ link.url }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   {% endfor %}
 </div>
